@@ -1,0 +1,16 @@
+;;
+;;   Ogg Vorbis CODEC for MSACM
+;;   Copyright (C)2001 H.Mutsuki
+;;
+
+;;LIBRARY      "VORBIS.ACM"
+;;DESCRIPTION  'Ogg Vorbis CODEC for MSACM'
+
+EXPORTS
+            DriverProc
+
+;; Local Variables:
+;; tab-width:4
+;; file-coding-system:*sjis*dos
+;; buffer-file-coding-system:sjis-dos
+;; End:

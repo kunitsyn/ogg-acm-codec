@@ -1,0 +1,20 @@
+/*
+	Ogg Vorbis CODEC for MSACM
+	Copyright (C)2001 H.Mutsuki
+*/
+
+/*****************************************************************
+*****************************************************************/
+
+/*****************************************************************
+*****************************************************************/
+
+/* Local Variables:						*/
+/* tab-width:4							*/
+/* c-basic-offset:4						*/
+/* c-indent-level:4						*/
+/* c-label-offset:-4					*/
+/* c-continued-statement-offset:4		*/
+/* file-coding-system:*sjis*dos			*/
+/* buffer-file-coding-system:sjis-dos	*/
+/* End:									*/

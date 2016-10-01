@@ -1,0 +1,35 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.0
+
+[DefaultInstall]
+CopyFiles  = CodecFilesSection
+UpdateInis = RegCodec95
+
+[DefaultInstall.NT]
+CopyFiles  = CodecFilesSection
+AddReg     = RegCodecNT
+
+[RegCodec95]
+system.ini,drivers32,,"%CODEC_FOURCC%=%CODEC_KEYBINARY%"
+
+[RegCodecNT]
+HKLM,"Software\Microsoft\Windows NT\CurrentVersion\Drivers32","%CODEC_FOURCC%",,"%CODEC_KEYBINARY%"
+HKLM,"Software\Microsoft\Windows NT\CurrentVersion\Drivers.desc","%CODEC_KEYBINARY%",,"%CODEC_DESCRIPTION%"
+
+[SourceDisksNames]
+1="Ogg Vorbis Codec Install Disk",VORBIS,
+
+[SourceDisksFiles]
+vorbis.acm=1
+
+[CodecFilesSection]
+vorbis.acm,,,0
+
+[DestinationDirs]
+CodecFilesSection=11
+
+[Strings]
+CODEC_FOURCC = "msacm.vorbis"
+CODEC_KEYBINARY ="vorbis.acm"
+CODEC_DESCRIPTION ="Ogg Vorbis Audio CODEC"

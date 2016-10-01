@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding = "shift_jis"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="vorbisdmp"
+	ProjectGUID="{C79E2DD9-1D84-48B8-B2C8-4F9CD559C5A9}"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake -f dump.mak"
+				ReBuildCommandLine="nmake -f dump.mak"
+				CleanCommandLine="nmake -f dump.mak clean"
+				Output="dump.inl"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake -f dump.mak"
+				ReBuildCommandLine="nmake -f dump.mak"
+				CleanCommandLine="nmake -f dump.mak clean"
+				Output="dump.inl"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="ソース ファイル"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+		</Filter>
+		<Filter
+			Name="ヘッダー ファイル"
+			Filter="h;hpp;hxx;hm;inl;inc">
+		</Filter>
+		<Filter
+			Name="リソース ファイル"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

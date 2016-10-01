@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding = "shift_jis"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="vorbisacm"
+	ProjectGUID="{665D6AD6-07DC-4690-8007-6E4AED13DAE5}"
+	Keyword="Win32Proj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="2"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;*.sbr;*.*;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="./../,./../libogg/include/,./../libvorbis/include/"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_HAVE_DUMPEDFORMATDETAILS"
+				MinimalRebuild="TRUE"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				EnableFunctionLevelLinking="TRUE"
+				ForceConformanceInForLoopScope="TRUE"
+				RuntimeTypeInfo="TRUE"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				CommandLine="set InstallDir=%SystemRoot%\system32
+set InstallInf=$(ProjectDir)\$(InputName).inf
+del /f &quot;$(ProjectDir)\$(TargetFileName)&quot;
+del /f &quot;%InstallDir%\$(TargetFileName)&quot;
+if not exist &quot;%InstallDir%\$(TargetFileName)&quot; (
+copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)&quot;
+rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 %InstallInf%
+)
+"
+				Outputs="$(ProjectDir)\$(TargetFileName)"/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OutDir)/vorbis.acm"
+				Version="4.0"
+				LinkIncremental="2"
+				ModuleDefinitionFile="$(ProjectName).def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile="$(OutDir)/$(ProjectName).pdb"
+				GenerateMapFile="TRUE"
+				SubSystem="2"
+				SetChecksum="FALSE"
+				ImportLibrary="$(OutDir)/vorbisacm.lib"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="2"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;*.sbr;*.*;$(TargetPath)"
+			WholeProgramOptimization="TRUE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/U &quot;RELEASEDEBUG&quot;"
+				Optimization="2"
+				GlobalOptimizations="TRUE"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="TRUE"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="TRUE"
+				AdditionalIncludeDirectories="./../,./../libogg/include/,./../libvorbis/include/"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;_HAVE_DUMPEDFORMATDETAILS,RELEASEDEBUG"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				EnableFunctionLevelLinking="TRUE"
+				ForceConformanceInForLoopScope="TRUE"
+				RuntimeTypeInfo="TRUE"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				CommandLine="set InstallDir=%SystemRoot%\system32
+set InstallInf=$(ProjectDir)\$(InputName).inf
+del /f &quot;$(ProjectDir)\$(TargetFileName)&quot;
+del /f &quot;%InstallDir%\$(TargetFileName)&quot;
+if not exist &quot;%InstallDir%\$(TargetFileName)&quot; (
+copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)&quot;
+rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 %InstallInf%
+)
+"
+				Outputs="$(ProjectDir)\$(TargetFileName)"/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OutDir)/vorbis.acm"
+				Version="4.0"
+				LinkIncremental="1"
+				ModuleDefinitionFile="$(ProjectName).def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile="$(OutDir)/$(ProjectName).pdb"
+				GenerateMapFile="TRUE"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				SetChecksum="TRUE"
+				ImportLibrary="$(OutDir)/vorbisacm.lib"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="ソース ファイル"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			<File
+				RelativePath="codec.cpp">
+			</File>
+			<File
+				RelativePath="decode.cpp">
+			</File>
+			<File
+				RelativePath="dump.cpp">
+			</File>
+			<File
+				RelativePath="encode.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="ヘッダー ファイル"
+			Filter="h;hpp;hxx;hm;inl;inc">
+			<File
+				RelativePath="codec.h">
+			</File>
+			<File
+				RelativePath="decode.h">
+			</File>
+			<File
+				RelativePath="encode.h">
+			</File>
+			<File
+				RelativePath="resource.h">
+			</File>
+			<File
+				RelativePath="vorbisacm.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="リソース ファイル"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File
+				RelativePath="vorbisacm.rc">
+			</File>
+			<File
+				RelativePath="vorbisacm.rct">
+			</File>
+		</Filter>
+		<File
+			RelativePath="vorbisacm.def">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
