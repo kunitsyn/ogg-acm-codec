@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0B6B9743-7EAC-499F-AA5E-2321F6466298}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25420.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.ilk%3b*.pdb%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.bat%3b*.sbr%3b*.*%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.ilk%3b*.pdb%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.bat%3b*.sbr%3b*.*%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LIB;_WIN32_WINNT=0x0400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>util.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>./../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_LIB;_WIN32_WINNT=0x0400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile>util.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="accel.cpp" />
+    <ClCompile Include="acmdrv.cpp" />
+    <ClCompile Include="com.cpp" />
+    <ClCompile Include="dialog.cpp" />
+    <ClCompile Include="driver.cpp" />
+    <ClCompile Include="link.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="mmutil.cpp" />
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="registry.cpp" />
+    <ClCompile Include="string.cpp" />
+    <ClCompile Include="sync.cpp" />
+    <ClCompile Include="time.cpp" />
+    <ClCompile Include="util.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="accel.h" />
+    <ClInclude Include="acm.h" />
+    <ClInclude Include="acmdrv.h" />
+    <ClInclude Include="archive.h" />
+    <ClInclude Include="cab.h" />
+    <ClInclude Include="caret.h" />
+    <ClInclude Include="cdrom.h" />
+    <ClInclude Include="clipbd.h" />
+    <ClInclude Include="com.h" />
+    <ClInclude Include="cursor.h" />
+    <ClInclude Include="d3d.h" />
+    <ClInclude Include="dc.h" />
+    <ClInclude Include="ddraw.h" />
+    <ClInclude Include="dialog.h" />
+    <ClInclude Include="dib.h" />
+    <ClInclude Include="dinput.h" />
+    <ClInclude Include="dispmode.h" />
+    <ClInclude Include="dmusic.h" />
+    <ClInclude Include="dmusplay.h" />
+    <ClInclude Include="dplay.h" />
+    <ClInclude Include="driver.h" />
+    <ClInclude Include="dshow.h" />
+    <ClInclude Include="dsound.h" />
+    <ClInclude Include="dsplay.h" />
+    <ClInclude Include="dxmplay.h" />
+    <ClInclude Include="except.h" />
+    <ClInclude Include="file.h" />
+    <ClInclude Include="font.h" />
+    <ClInclude Include="icon.h" />
+    <ClInclude Include="ime.h" />
+    <ClInclude Include="joystick.h" />
+    <ClInclude Include="jpeg.h" />
+    <ClInclude Include="link.h" />
+    <ClInclude Include="mci.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="mixer.h" />
+    <ClInclude Include="mmutil.h" />
+    <ClInclude Include="module.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="palette.h" />
+    <ClInclude Include="pica.h" />
+    <ClInclude Include="png.h" />
+    <ClInclude Include="process.h" />
+    <ClInclude Include="psd.h" />
+    <ClInclude Include="regexp.h" />
+    <ClInclude Include="region.h" />
+    <ClInclude Include="registry.h" />
+    <ClInclude Include="scenario.h" />
+    <ClInclude Include="shell.h" />
+    <ClInclude Include="spi.h" />
+    <ClInclude Include="sprite.h" />
+    <ClInclude Include="string.h" />
+    <ClInclude Include="sync.h" />
+    <ClInclude Include="sysinfo.h" />
+    <ClInclude Include="thread.h" />
+    <ClInclude Include="time.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="vmutil.h" />
+    <ClInclude Include="window.h" />
+    <ClInclude Include="wmaplay.h" />
+    <ClInclude Include="wmaudio.h" />
+    <ClInclude Include="wmsdk.h" />
+    <ClInclude Include="zlib.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
