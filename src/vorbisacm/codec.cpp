@@ -30,7 +30,7 @@
 	Ogg Vorbis for MSACM
 *****************************************************************/
 /*****************************************************************
-	ƒOƒ[ƒoƒ‹
+	ã‚°ãƒ­ãƒ¼ãƒãƒ«
 *****************************************************************/
 BOOL WINAPI DllMain(HMODULE hModule, DWORD fdwReason, LPVOID lpvReserved)
 {
@@ -38,10 +38,10 @@ BOOL WINAPI DllMain(HMODULE hModule, DWORD fdwReason, LPVOID lpvReserved)
 	switch(fdwReason) {
 	case DLL_PROCESS_ATTACH:
 #if defined(_DEBUG) || defined(RELEASEDEBUG)
-		// ƒrƒ‹ƒhAƒfƒoƒbƒOAƒŠƒrƒ‹ƒhc‚ÌƒTƒCƒNƒ‹‚ğ‰~ŠŠ‚És‚¤‚½‚ßA
-		// “Á’è‚ÌƒvƒƒZƒX‚ª‚±‚Ìƒ‚ƒWƒ…[ƒ‹(vorbis.acm)‚ğƒ[ƒh‚µƒƒbƒN‚·‚é‚Ì‚ğ–h‚®
-		// ¦explorer.exe‚ÍƒvƒƒpƒeƒBƒV[ƒg“™‚Ì–Ú“I‚Å‚±‚Ìƒ‚ƒWƒ…[ƒ‹‚ğƒ[ƒh‚·‚éê‡‚ª‚ ‚é
-		// (‚»‚µ‚Ä¢‚Á‚½‚±‚Æ‚ÉƒvƒƒZƒX‚ªI—¹‚·‚é‚Ü‚ÅƒAƒ“ƒ[ƒh‚³‚ê‚È‚¢‚Ì‚¾)
+		// ãƒ“ãƒ«ãƒ‰ã€ãƒ‡ãƒãƒƒã‚°ã€ãƒªãƒ“ãƒ«ãƒ‰â€¦ã®ã‚µã‚¤ã‚¯ãƒ«ã‚’å††æ»‘ã«è¡Œã†ãŸã‚ã€
+		// ç‰¹å®šã®ãƒ—ãƒ­ã‚»ã‚¹ãŒã“ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«(vorbis.acm)ã‚’ãƒ­ãƒ¼ãƒ‰ã—ãƒ­ãƒƒã‚¯ã™ã‚‹ã®ã‚’é˜²ã
+		// â€»explorer.exeã¯ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚·ãƒ¼ãƒˆç­‰ã®ç›®çš„ã§ã“ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹å ´åˆãŒã‚ã‚‹
+		// (ãã—ã¦å›°ã£ãŸã“ã¨ã«ãƒ—ãƒ­ã‚»ã‚¹ãŒçµ‚äº†ã™ã‚‹ã¾ã§ã‚¢ãƒ³ãƒ­ãƒ¼ãƒ‰ã•ã‚Œãªã„ã®ã )
 		{
 			HMC::TSTRING s;
 			HMODULE h = ::GetModuleHandle(NULL);
@@ -72,7 +72,7 @@ extern "C" LRESULT WINAPI DriverProc(DWORD dwId, HDRVR hdrvr, UINT uMsg, LPARAM 
 	return CacmDriverOggVorbis::DriverProc(dwId,hdrvr,uMsg,lParam1,lParam2);
 }
 /*****************************************************************
-	Šeí’è”
+	å„ç¨®å®šæ•°
 *****************************************************************/
 static const DWORD aSamplesPerSec[] = {
 	48000, 44100, 22050, 11025
@@ -100,9 +100,9 @@ static const float aQuality[][11] = {
 	{ 0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f }, // 11Kf,Mono
 };
 /*****************************************************************
-	ƒtƒH[ƒ}ƒbƒgƒe[ƒuƒ‹
+	ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«
 *****************************************************************/
-// WAVE_FORMAT_PCM‘¤Ú×ƒŠƒXƒg
+// WAVE_FORMAT_PCMå´è©³ç´°ãƒªã‚¹ãƒˆ
 const FORMATDETAIL aPCMFormatIndexToDetail[] = {
 	// WAVE_FORMAT_PCM(48K,16Bits,Stereo)
 	{ aSamplesPerSec[0], aChannels[0], aBitsPerSample[0], 0, 0.0 },
@@ -121,7 +121,7 @@ const FORMATDETAIL aPCMFormatIndexToDetail[] = {
 	// WAVE_FORMAT_PCM(11K,16Bits,Mono)
 	{ aSamplesPerSec[3], aChannels[1], aBitsPerSample[0], 0, 0.0 },
 };
-// WAVE_FORMAT_VORBIS‘¤Ú×ƒŠƒXƒg
+// WAVE_FORMAT_VORBISå´è©³ç´°ãƒªã‚¹ãƒˆ
 const FORMATDETAIL aOggFormatIndexToDetail[] = {
 	// WAVE_FORMAT_VORBIS(48K,16Bits,Stereo)
 	{ aSamplesPerSec[0], aChannels[0], aBitsPerSample[0], aAvgBytesPerSec[0][ 0], aQuality[0][ 0] },
@@ -257,10 +257,10 @@ static const DWORD aFormatTagIndexToFormats[] = {
 	ARRAYLEN(aOggFormatIndexToDetail),
 };
 /*****************************************************************
-	ƒ†[ƒeƒBƒŠƒeƒB
+	ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£
 *****************************************************************/
 /*****************************************************************
-	ƒtƒH[ƒ}ƒbƒg‚ª³‚µ‚¢‚±‚Æ‚ğŠm”F‚·‚é
+	ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒæ­£ã—ã„ã“ã¨ã‚’ç¢ºèªã™ã‚‹
 *****************************************************************/
 BOOL pcmIsValidFormat(CONST WAVEFORMATEX *pwfx)
 {
@@ -270,14 +270,14 @@ BOOL pcmIsValidFormat(CONST WAVEFORMATEX *pwfx)
 		if(pwfx->nSamplesPerSec!=aPCMFormatIndexToDetail[n].nSamplesPerSec) continue;
 		if(pwfx->nChannels     !=aPCMFormatIndexToDetail[n].nChannels     ) continue;
 		if(pwfx->wBitsPerSample!=aPCMFormatIndexToDetail[n].wBitsPerSample) continue;
-		if(pwfx->nBlockAlign     != HMC::GetBytesPerSample(pwfx)) continue;	// ƒe[ƒuƒ‹‚Å‚Í‚È‚­’è®‚É‚ ‚Ä‚Í‚Ü‚ê‚Î‚n‚j
-		if(pwfx->nAvgBytesPerSec != HMC::GetBytesPerSec   (pwfx)) continue;	// ƒe[ƒuƒ‹‚Å‚Í‚È‚­’è®‚É‚ ‚Ä‚Í‚Ü‚ê‚Î‚n‚j
+		if(pwfx->nBlockAlign     != HMC::GetBytesPerSample(pwfx)) continue;	// ãƒ†ãƒ¼ãƒ–ãƒ«ã§ã¯ãªãå®šå¼ã«ã‚ã¦ã¯ã¾ã‚Œã°ï¼¯ï¼«
+		if(pwfx->nAvgBytesPerSec != HMC::GetBytesPerSec   (pwfx)) continue;	// ãƒ†ãƒ¼ãƒ–ãƒ«ã§ã¯ãªãå®šå¼ã«ã‚ã¦ã¯ã¾ã‚Œã°ï¼¯ï¼«
 		break;
 	}
 	return n<ARRAYLEN(aPCMFormatIndexToDetail);
 }
 /*****************************************************************
-	ƒtƒH[ƒ}ƒbƒg‚ª³‚µ‚¢‚±‚Æ‚ğŠm”F‚·‚é
+	ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒæ­£ã—ã„ã“ã¨ã‚’ç¢ºèªã™ã‚‹
 *****************************************************************/
 BOOL oggIsValidFormat(CONST WAVEFORMATEX *pwfx)
 {
@@ -293,14 +293,14 @@ BOOL oggIsValidFormat(CONST WAVEFORMATEX *pwfx)
 		if(pwfx->nSamplesPerSec!=aOggFormatIndexToDetail[n].nSamplesPerSec) continue;
 		if(pwfx->nChannels     !=aOggFormatIndexToDetail[n].nChannels     ) continue;
 		if(pwfx->wBitsPerSample!=aOggFormatIndexToDetail[n].wBitsPerSample) continue;
-		//if(pwfx->nBlockAlign     != HMC::GetBytesPerSample(pwfx)) continue;	// ¦Š¸‚¦‚Äƒ`ƒFƒbƒN‚µ‚È‚¢
-		//if(pwfx->nAvgBytesPerSec != HMC::GetBytesPerSec   (pwfx)) continue;	// ¦Š¸‚¦‚Äƒ`ƒFƒbƒN‚µ‚È‚¢
+		//if(pwfx->nBlockAlign     != HMC::GetBytesPerSample(pwfx)) continue;	// â€»æ•¢ãˆã¦ãƒã‚§ãƒƒã‚¯ã—ãªã„
+		//if(pwfx->nAvgBytesPerSec != HMC::GetBytesPerSec   (pwfx)) continue;	// â€»æ•¢ãˆã¦ãƒã‚§ãƒƒã‚¯ã—ãªã„
 		break;
 	}
 	return n<ARRAYLEN(aOggFormatIndexToDetail);
 }
 /*****************************************************************
-	AvgBytesPerSec‚ğƒe[ƒuƒ‹‚©‚çæ“¾‚·‚é
+	AvgBytesPerSecã‚’ãƒ†ãƒ¼ãƒ–ãƒ«ã‹ã‚‰å–å¾—ã™ã‚‹
 *****************************************************************/
 DWORD oggAvgBytesPerSec(CONST WAVEFORMATEX *pwfx, DWORD mode)
 {
@@ -334,7 +334,7 @@ DWORD oggAvgBytesPerSec(CONST WAVEFORMATEX *pwfx, DWORD mode)
 	return n;
 }
 /*****************************************************************
-	ƒe[ƒuƒ‹‚©‚ç‹ß—‚·‚éƒtƒH[ƒ}ƒbƒg‚ğŒŸõ‚·‚é
+	ãƒ†ãƒ¼ãƒ–ãƒ«ã‹ã‚‰è¿‘ä¼¼ã™ã‚‹ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’æ¤œç´¢ã™ã‚‹
 *****************************************************************/
 DWORD oggFormatToIndex(CONST WAVEFORMATEX *pwfx)
 {
@@ -363,17 +363,17 @@ DWORD oggFormatToIndex(CONST WAVEFORMATEX *pwfx)
 	return index;
 }
 /*****************************************************************
-	ƒtƒH[ƒ}ƒbƒg‚ÌÚ×‚ğæ“¾‚·‚é
+	ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®è©³ç´°ã‚’å–å¾—ã™ã‚‹
 *****************************************************************/
 DWORD oggFormatMakeupExtraByte(WAVEFORMATEX *pwfx)
 {
-	// ‹¤’Ê•”•ª‰Šú‰»
+	// å…±é€šéƒ¨åˆ†åˆæœŸåŒ–
 	memset((LPBYTE)pwfx+sizeof(WAVEFORMATEX),0,pwfx->cbSize);
 	((LPOGGWAVEFORMAT)pwfx)->dwVorbisACMVersion = VORBISACM_VERSION;
 	((LPOGGWAVEFORMAT)pwfx)->dwLibVorbisVersion = LIBVORBIS_VERSION;
 
 #ifdef _HAVE_DUMPEDFORMATDETAILS
-	// ƒ_ƒ“ƒvÏ‚İƒtƒH[ƒ}ƒbƒgÚ×‚Ìæ“¾‚ğ‚İ‚é
+	// ãƒ€ãƒ³ãƒ—æ¸ˆã¿ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆè©³ç´°ã®å–å¾—ã‚’è©¦ã¿ã‚‹
 	WORD  t = pwfx->wFormatTag;
 	WORD  c = pwfx->nChannels;
 	DWORD s = pwfx->nSamplesPerSec;
@@ -398,7 +398,7 @@ DWORD oggFormatMakeupExtraByte(WAVEFORMATEX *pwfx)
 	}
 #endif
 
-	// ’Êí‚Ì•û–@‚ÅƒtƒH[ƒ}ƒbƒgÚ×‚ğ“¾‚é
+	// é€šå¸¸ã®æ–¹æ³•ã§ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆè©³ç´°ã‚’å¾—ã‚‹
 	if(pwfx->wFormatTag==WAVE_FORMAT_VORBIS2 || pwfx->wFormatTag==WAVE_FORMAT_VORBIS2P) {
 		COggVorbisEncode data(NULL);
 		data.Create(pwfx,pwfx);
@@ -409,24 +409,24 @@ DWORD oggFormatMakeupExtraByte(WAVEFORMATEX *pwfx)
 			int result = ogg_stream_flush(&data.os,&data.og);
 			if(result==0) break;
 			if(!(pd + data.og.header_len + data.og.body_len < pe)) {
-				ASSERT(0);				// ƒTƒCƒY•s‘«II
+				ASSERT(0);				// ã‚µã‚¤ã‚ºä¸è¶³ï¼ï¼
 				return 0;
 			}
 			memcpy(pd,data.og.header,data.og.header_len);
 			memcpy(pd+data.og.header_len,data.og.body,data.og.body_len);
 			pd += data.og.header_len + data.og.body_len;
 		}
-		// cbSize¶¬
+		// cbSizeç”Ÿæˆ
 		pwfx->cbSize = sizeof(OGGWAVEFORMAT) - sizeof(WAVEFORMATEX);
 		pwfx->cbSize += pd - ps;
-		pwfx->cbSize = ALIGNWORD(pwfx->cbSize);	// ¦Œã‘±ƒ`ƒƒƒ“ƒN‚ÌƒAƒ‰ƒCƒƒ“ƒg‚ğ•Û‚·‚é
+		pwfx->cbSize = ALIGNWORD(pwfx->cbSize);	// â€»å¾Œç¶šãƒãƒ£ãƒ³ã‚¯ã®ã‚¢ãƒ©ã‚¤ãƒ¡ãƒ³ãƒˆã‚’ä¿æŒã™ã‚‹
 	} else {
 		pwfx->cbSize = sizeof(OGGWAVEFORMAT) - sizeof(WAVEFORMATEX);
 	}
 	return HMC::GetFormatSize(pwfx);
 }
 /*****************************************************************
-	Å‘å‚ÌƒtƒH[ƒ}ƒbƒgƒTƒCƒY‚ğæ“¾‚·‚é(–¢g—p)
+	æœ€å¤§ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹(æœªä½¿ç”¨)
 *****************************************************************/
 DWORD GetLargestFormat(WAVEFORMATEX *pwfx)
 {
@@ -452,7 +452,7 @@ DWORD GetLargestFormat(WAVEFORMATEX *pwfx)
 	return cbFormatSize;
 }
 /*****************************************************************
-	ƒtƒH[ƒ}ƒbƒgÚ×‚ğ‘®‰»‚·‚é
+	ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆè©³ç´°ã‚’æ›¸å¼åŒ–ã™ã‚‹
 *****************************************************************/
 DWORD FormatFormatDetail(WCHAR *szFormat, size_t cbBuf, const FORMATDETAIL *pDetail)
 {
@@ -490,10 +490,10 @@ DWORD FormatFormatDetail(WCHAR *szFormat, size_t cbBuf, const FORMATDETAIL *pDet
 }
 
 /*****************************************************************
-	vorbis.acmƒhƒ‰ƒCƒo
+	vorbis.acmãƒ‰ãƒ©ã‚¤ãƒ
 *****************************************************************/
 /*****************************************************************
-	ƒIƒuƒWƒFƒNƒg‚Ìì¬Aíœ
+	ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆã€å‰Šé™¤
 *****************************************************************/
 void CacmDriverOggVorbis::init()
 {
@@ -503,16 +503,16 @@ void CacmDriverOggVorbis::destroy()
 	BASE::destroy();
 	init();
 }
-// ƒhƒ‰ƒCƒoƒCƒ“ƒXƒ^ƒ“ƒX‚ğ::operator new()‚ÅŠm•Û‚·‚éê‡AƒvƒƒZƒXI—¹A
-// DRV_CLOSEˆ—ˆÈ‘O‚É_CRT_INIT‚É‚æ‚Á‚Äƒƒ‚ƒŠ‚ªŠJ•ú‚³‚ê‚Ä‚µ‚Ü‚¤ê‡‚ª‚ ‚é
-// (_CRT_INIT‚Í‘¶İ‚·‚éƒCƒ“ƒXƒ^ƒ“ƒX‚ğ’P‚Éƒƒ‚ƒŠƒŠ[ƒN‚Æ‚µ‚Äˆ—‚µ‚Ä‚µ‚Ü‚¤)
-// Á–Å‚µ‚½ƒhƒ‰ƒCƒoƒCƒ“ƒXƒ^ƒ“ƒX‚É‘Î‚µ‚Äƒhƒ‰ƒCƒoƒƒbƒZ[ƒW‚ª‘—M‚³‚ê‚é‚Æ
-// W9x‚Ìê‡ƒVƒXƒeƒ€‚ğƒNƒ‰ƒbƒVƒ…‚³‚¹‚é‚±‚Æ‚ª‚ ‚é‚Ì‚Å”ñí‚É’ˆÓ‚ª•K—v
+// ãƒ‰ãƒ©ã‚¤ãƒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’::operator new()ã§ç¢ºä¿ã™ã‚‹å ´åˆã€ãƒ—ãƒ­ã‚»ã‚¹çµ‚äº†æ™‚ã€
+// DRV_CLOSEå‡¦ç†ä»¥å‰ã«_CRT_INITã«ã‚ˆã£ã¦ãƒ¡ãƒ¢ãƒªãŒé–‹æ”¾ã•ã‚Œã¦ã—ã¾ã†å ´åˆãŒã‚ã‚‹
+// (_CRT_INITã¯å­˜åœ¨ã™ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å˜ã«ãƒ¡ãƒ¢ãƒªãƒªãƒ¼ã‚¯ã¨ã—ã¦å‡¦ç†ã—ã¦ã—ã¾ã†)
+// æ¶ˆæ»…ã—ãŸãƒ‰ãƒ©ã‚¤ãƒã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã«å¯¾ã—ã¦ãƒ‰ãƒ©ã‚¤ãƒãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒé€ä¿¡ã•ã‚Œã‚‹ã¨
+// W9xã®å ´åˆã‚·ã‚¹ãƒ†ãƒ ã‚’ã‚¯ãƒ©ãƒƒã‚·ãƒ¥ã•ã›ã‚‹ã“ã¨ãŒã‚ã‚‹ã®ã§éå¸¸ã«æ³¨æ„ãŒå¿…è¦
 void *CacmDriverOggVorbis::operator new(size_t dwBytes)
 {
 	HANDLE hHeap = ::GetProcessHeap();
 	LPVOID pv = ::HeapAlloc(hHeap,0L,dwBytes);
-	return pv;	// GetLastError()‚µ‚Ä‚Í‚¢‚¯‚È‚¢‚±‚Æ‚É’ˆÓ
+	return pv;	// GetLastError()ã—ã¦ã¯ã„ã‘ãªã„ã“ã¨ã«æ³¨æ„
 }
 void CacmDriverOggVorbis::operator delete(void *pvMem)
 {
@@ -521,7 +521,7 @@ void CacmDriverOggVorbis::operator delete(void *pvMem)
 	CHECKRESULT_API(b);
 }
 /*****************************************************************
-	ƒfƒBƒXƒpƒbƒ`ƒƒ
+	ãƒ‡ã‚£ã‚¹ãƒ‘ãƒƒãƒãƒ£
 *****************************************************************/
 LRESULT CacmDriverOggVorbis::DriverProc(DWORD dwId, HDRVR hdrvr, UINT uMsg, LPARAM lParam1, LPARAM lParam2)
 {
@@ -537,33 +537,33 @@ LRESULT CacmDriverOggVorbis::DriverProc(DWORD dwId, HDRVR hdrvr, UINT uMsg, LPAR
 	LPTYPE p = LPTYPE(dwId);
 	do {
 		if(uMsg==DRV_LOAD) {
-			lRes = 1L;			// 0ˆÈŠO‚Ì’l‚ğ•Ô‚·‚Æ¬Œ÷
+			lRes = 1L;			// 0ä»¥å¤–ã®å€¤ã‚’è¿”ã™ã¨æˆåŠŸ
 			break;
 		} else if(uMsg==DRV_OPEN) {
 			LPACMDRVOPENDESC paod = (LPACMDRVOPENDESC)lParam2;
 			if(paod) {
 				if(paod->fccType!=ACMDRIVERDETAILS_FCCTYPE_AUDIOCODEC) {
-					lRes = 0L;	// –³Œø‚ÈCODECƒ^ƒCƒv
+					lRes = 0L;	// ç„¡åŠ¹ãªCODECã‚¿ã‚¤ãƒ—
 					break;
 				}
 			}
-			p = new TYPE();		// V‹KƒCƒ“ƒXƒ^ƒ“ƒXì¬
+			p = new TYPE();		// æ–°è¦ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
 			if(!p) {
 				if(paod) {
 					paod->dwError = MMSYSERR_NOMEM;
 				}
-				lRes = 0L;		// V‹KƒCƒ“ƒXƒ^ƒ“ƒX‚Ìì¬‚É¸”s‚µ‚½ê‡‚Í0‚ğ•Ô‚·
+				lRes = 0L;		// æ–°è¦ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ä½œæˆã«å¤±æ•—ã—ãŸå ´åˆã¯0ã‚’è¿”ã™
 				break;
 			}
-			p->map(hdrvr);		// ƒnƒ“ƒhƒ‹‚ÆŠÖ˜A•t‚¯(CDrvr‚ªclose()‚·‚é‚Ì‚ğ–h‚®‚½‚ß”ñƒI[ƒi[‚Æ‚·‚é)
+			p->map(hdrvr);		// ãƒãƒ³ãƒ‰ãƒ«ã¨é–¢é€£ä»˜ã‘(CDrvrãŒclose()ã™ã‚‹ã®ã‚’é˜²ããŸã‚éã‚ªãƒ¼ãƒŠãƒ¼ã¨ã™ã‚‹)
 		}
 		if(p) {
 			if(p->handle()==hdrvr) {
 				lRes = p->driverProc(uMsg,lParam1,lParam2);
 				if(uMsg==DRV_OPEN) {
-					lRes = (LRESULT)p;	// •Ô‚è’l‚ÍŸ‰ñ‚©‚çdwId‚Æ‚µ‚Äg‚í‚ê‚é
+					lRes = (LRESULT)p;	// è¿”ã‚Šå€¤ã¯æ¬¡å›ã‹ã‚‰dwIdã¨ã—ã¦ä½¿ã‚ã‚Œã‚‹
 				} else if(uMsg==DRV_CLOSE) {
-					delete p;	// ƒCƒ“ƒXƒ^ƒ“ƒXíœ
+					delete p;	// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å‰Šé™¤
 				}
 			} else {
 				lRes = MMSYSERR_INVALHANDLE;
@@ -575,7 +575,7 @@ LRESULT CacmDriverOggVorbis::DriverProc(DWORD dwId, HDRVR hdrvr, UINT uMsg, LPAR
 	return lRes;
 }
 /*****************************************************************
-	ƒnƒ“ƒhƒ‰
+	ãƒãƒ³ãƒ‰ãƒ©
 *****************************************************************/
 LRESULT CacmDriverOggVorbis::dmConfigure(LPARAM lParam1, LPARAM lParam2)
 {
@@ -599,8 +599,8 @@ LRESULT CacmDriverOggVorbis::dmConfigure(LPARAM lParam1, LPARAM lParam2)
 }
 LRESULT CacmDriverOggVorbis::dmQueryConfigure(LPARAM lParam1, LPARAM lParam2)
 {
-	//return 1L;	// İ’èƒ_ƒCƒAƒƒO‚ğƒTƒ|[ƒg‚·‚é
-	return 0L;	// İ’èƒ_ƒCƒAƒƒO‚ğƒTƒ|[ƒg‚µ‚È‚¢
+	//return 1L;	// è¨­å®šãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹
+	return 0L;	// è¨­å®šãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’ã‚µãƒãƒ¼ãƒˆã—ãªã„
 }
 LRESULT CacmDriverOggVorbis::dmDriverDetails(LPARAM lParam1, LPARAM lParam2)
 {
@@ -613,8 +613,8 @@ LRESULT CacmDriverOggVorbis::dmDriverDetails(LPARAM lParam1, LPARAM lParam2)
 	add.vdwACM		= MAKE_ACM_VERSION(3,50,0);
 	add.vdwDriver	= MAKE_ACM_VERSION(4, 0,0);
 	add.fdwSupport	= ACMDRIVERDETAILS_SUPPORTF_CODEC;
-	add.cFormatTags	= ARRAYLEN(aFormatTagIndexToTag);	// ƒTƒ|[ƒg‚·‚éƒtƒH[ƒ}ƒbƒg(PCM,OGG)
-	add.cFilterTags	= 0;								// ƒTƒ|[ƒg‚·‚éƒtƒBƒ‹ƒ^(–³‚µ)
+	add.cFormatTags	= ARRAYLEN(aFormatTagIndexToTag);	// ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ(PCM,OGG)
+	add.cFilterTags	= 0;								// ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãƒ•ã‚£ãƒ«ã‚¿(ç„¡ã—)
 	add.hicon		= ::LoadIcon(::GetDriverModuleHandle(handle()),MAKEINTRESOURCE(0));
 	wcscpy(add.szShortName	,L"Ogg Vorbis");
 	wcscpy(add.szLongName	,L"Ogg Vorbis Audio CODEC");
@@ -629,7 +629,7 @@ LRESULT CacmDriverOggVorbis::dmDriverAbout(LPARAM lParam1, LPARAM lParam2)
 	HWND hwnd = (HWND)lParam1;
 	LRESULT lRes = MMSYSERR_NOERROR;
 	do {
-		// hwnd==-1‚Ìê‡‚Í–â‚¢‡‚í‚¹‚Ì‚İ
+		// hwnd==-1ã®å ´åˆã¯å•ã„åˆã‚ã›ã®ã¿
 		if(hwnd==(HWND)-1) {
 			lRes = MMSYSERR_NOTSUPPORTED;
 			break;
@@ -662,7 +662,7 @@ LRESULT CacmDriverOggVorbis::dmFormatSuggest(LPARAM lParam1, LPARAM lParam2)
 			lRes = MMSYSERR_NOTSUPPORTED;
 			break;
 		}
-		// PCM <-> OGG ‹¤’Ê
+		// PCM <-> OGG å…±é€š
 		if(fdwSuggest & ACM_FORMATSUGGESTF_NCHANNELS) {
 			if(pwfxDst->nChannels != pwfxSrc->nChannels) {
 				lRes = ACMERR_NOTPOSSIBLE;
@@ -687,7 +687,7 @@ LRESULT CacmDriverOggVorbis::dmFormatSuggest(LPARAM lParam1, LPARAM lParam2)
 		} else {
 			pwfxDst->wBitsPerSample = pwfxSrc->wBitsPerSample;
 		}
-		// PCM -> OGG •ÏŠ·(ƒGƒ“ƒR[ƒh)‚Ìê‡
+		// PCM -> OGG å¤‰æ›(ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰)ã®å ´åˆ
 		if(pwfxSrc->wFormatTag==WAVE_FORMAT_PCM) {
 			if(!pcmIsValidFormat(pwfxSrc)) {
 				lRes = ACMERR_NOTPOSSIBLE;
@@ -716,12 +716,12 @@ LRESULT CacmDriverOggVorbis::dmFormatSuggest(LPARAM lParam1, LPARAM lParam2)
 				}
 			}
 			ASSERT(n<ARRAYLEN(aFormatTagIndexToTag));
-			// WAVE_FORMAT_VORBIS ƒGƒLƒXƒgƒ‰ƒoƒCƒg[“U
+			// WAVE_FORMAT_VORBIS ã‚¨ã‚­ã‚¹ãƒˆãƒ©ãƒã‚¤ãƒˆå……å¡«
 			if(!oggFormatMakeupExtraByte(pwfxDst)) {
 				lRes = ACMERR_NOTPOSSIBLE;
 			}
 		}
-		// OGG -> PCM •ÏŠ·(ƒfƒR[ƒh)‚Ìê‡
+		// OGG -> PCM å¤‰æ›(ãƒ‡ã‚³ãƒ¼ãƒ‰)ã®å ´åˆ
 		else if(pwfxSrc->wFormatTag==WAVE_FORMAT_VORBIS1 ||
 				pwfxSrc->wFormatTag==WAVE_FORMAT_VORBIS2 ||
 				pwfxSrc->wFormatTag==WAVE_FORMAT_VORBIS3 ||
@@ -752,7 +752,7 @@ LRESULT CacmDriverOggVorbis::dmFormatTagDetails(LPARAM lParam1, LPARAM lParam2)
 	DWORD fdwDetails = (DWORD)lParam2 & ACM_FORMATTAGDETAILSF_QUERYMASK;
 	LRESULT lRes = MMSYSERR_NOERROR;
 	do {
-		// ƒtƒH[ƒ}ƒbƒg‚Ì‚İ‚ğŒˆ’è‚·‚é‚½‚ß‚Ì•ªŠò(fdwDetails‚Íƒtƒ‰ƒO‚Å‚Í‚È‚¢‚ç‚µ‚¢)
+		// ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ã¿ã‚’æ±ºå®šã™ã‚‹ãŸã‚ã®åˆ†å²(fdwDetailsã¯ãƒ•ãƒ©ã‚°ã§ã¯ãªã„ã‚‰ã—ã„)
 		if(fdwDetails==ACM_FORMATTAGDETAILSF_INDEX) {
 			if(padft->dwFormatTagIndex<ARRAYLEN(aFormatTagIndexToTag)) {
 				padft->dwFormatTag = aFormatTagIndexToTag[padft->dwFormatTagIndex];
@@ -763,7 +763,7 @@ LRESULT CacmDriverOggVorbis::dmFormatTagDetails(LPARAM lParam1, LPARAM lParam2)
 		} else if(fdwDetails==ACM_FORMATTAGDETAILSF_LARGESTSIZE) {
 			if(padft->dwFormatTag==WAVE_FORMAT_PCM) {
 			} else if(padft->dwFormatTag==WAVE_FORMAT_UNKNOWN) {
-				padft->dwFormatTag = WAVE_FORMAT_VORBIS2;	// WAVE_FORMAT_VORBIS2‚ªˆê”Ô‘å‚«‚¢(‚¢‚¢‚Ì‚©H)
+				padft->dwFormatTag = WAVE_FORMAT_VORBIS2;	// WAVE_FORMAT_VORBIS2ãŒä¸€ç•ªå¤§ãã„(ã„ã„ã®ã‹ï¼Ÿ)
 			} else if(padft->dwFormatTag==WAVE_FORMAT_VORBIS1 ||
 					  padft->dwFormatTag==WAVE_FORMAT_VORBIS2 ||
 					  padft->dwFormatTag==WAVE_FORMAT_VORBIS3 ||
@@ -789,7 +789,7 @@ LRESULT CacmDriverOggVorbis::dmFormatTagDetails(LPARAM lParam1, LPARAM lParam2)
 			lRes = MMSYSERR_NOTSUPPORTED;
 			break;
 		}
-		// ƒtƒH[ƒ}ƒbƒgÚ×‚ğ[“U
+		// ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆè©³ç´°ã‚’å……å¡«
 		DWORD n = 0;
 		for(; n<ARRAYLEN(aFormatTagIndexToTag); n++) {
 			if(padft->dwFormatTag==aFormatTagIndexToTag[n]) {
@@ -824,7 +824,7 @@ LRESULT CacmDriverOggVorbis::dmFormatDetails(LPARAM lParam1, LPARAM lParam2)
 					lRes = ACMERR_NOTPOSSIBLE;
 					break;
 				}
-				// WAVE_FORMAT_PCM Ú×[“U
+				// WAVE_FORMAT_PCM è©³ç´°å……å¡«
 				padf->cbStruct			= min(padf->cbStruct,sizeof(*padf));
 				padf->fdwSupport		= ACMDRIVERDETAILS_SUPPORTF_CODEC;
 				pwfx->wFormatTag		= (WORD)padf->dwFormatTag;	// WAVE_FORMAT_PCM;
@@ -844,7 +844,7 @@ LRESULT CacmDriverOggVorbis::dmFormatDetails(LPARAM lParam1, LPARAM lParam2)
 					lRes = ACMERR_NOTPOSSIBLE;
 					break;
 				}
-				// WAVE_FORMAT_VORBIS Ú×[“U
+				// WAVE_FORMAT_VORBIS è©³ç´°å……å¡«
 				padf->cbStruct			= min(padf->cbStruct,sizeof(*padf));
 				padf->fdwSupport		= ACMDRIVERDETAILS_SUPPORTF_CODEC;
 				pwfx->wFormatTag		= (WORD)padf->dwFormatTag;	// VORBIS1,VORBIS2,VORBIS3
@@ -862,7 +862,7 @@ LRESULT CacmDriverOggVorbis::dmFormatDetails(LPARAM lParam1, LPARAM lParam2)
 					}
 				}
 				ASSERT(n<ARRAYLEN(aFormatTagIndexToTag));
-				// WAVE_FORMAT_VORBIS ƒGƒLƒXƒgƒ‰ƒoƒCƒg[“U
+				// WAVE_FORMAT_VORBIS ã‚¨ã‚­ã‚¹ãƒˆãƒ©ãƒã‚¤ãƒˆå……å¡«
 				if(!oggFormatMakeupExtraByte(pwfx)) {
 					lRes = ACMERR_NOTPOSSIBLE;
 				}
@@ -906,13 +906,13 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 	LPACMDRVSTREAMINSTANCE padsi = (LPACMDRVSTREAMINSTANCE)lParam1;
 	LRESULT lRes = MMSYSERR_NOERROR;
 	do {
-		// ‚±‚ÌCODEC‚Í”ñ“¯Šú•ÏŠ·‚ğƒTƒ|[ƒg‚µ‚È‚¢
+		// ã“ã®CODECã¯éåŒæœŸå¤‰æ›ã‚’ã‚µãƒãƒ¼ãƒˆã—ãªã„
 		if(padsi->fdwOpen & ACM_STREAMOPENF_ASYNC) {
 			lRes = ACMERR_NOTPOSSIBLE;
 			break;
 		}
-		// ƒŒ[ƒgAƒ`ƒƒƒlƒ‹Aƒrƒbƒg•ÏŠ·‚ÍƒTƒ|[ƒg‚µ‚È‚¢
-		// ¦‚±‚±‚Å’e‚©‚È‚¢‚ÆƒtƒH[ƒ}ƒbƒgˆê——‚É‘S‚Ä‚ÌƒtƒH[ƒ}ƒbƒg‚ª—ñ‹“‚³‚ê‚é
+		// ãƒ¬ãƒ¼ãƒˆã€ãƒãƒ£ãƒãƒ«ã€ãƒ“ãƒƒãƒˆå¤‰æ›ã¯ã‚µãƒãƒ¼ãƒˆã—ãªã„
+		// â€»ã“ã“ã§å¼¾ã‹ãªã„ã¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆä¸€è¦§ã«å…¨ã¦ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒåˆ—æŒ™ã•ã‚Œã‚‹
 		if(!(padsi->pwfxDst->nSamplesPerSec==padsi->pwfxSrc->nSamplesPerSec &&
 			 padsi->pwfxDst->nChannels     ==padsi->pwfxSrc->nChannels &&
 			 padsi->pwfxDst->wBitsPerSample==padsi->pwfxSrc->wBitsPerSample)) {
@@ -929,15 +929,15 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 				lRes = ACMERR_NOTPOSSIBLE;
 				break;
 			}
-			// PCM -> OGG •ÏŠ·(ƒGƒ“ƒR[ƒh)‚Ìê‡
+			// PCM -> OGG å¤‰æ›(ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰)ã®å ´åˆ
 			if(!pcmIsValidFormat(padsi->pwfxSrc) || !oggIsValidFormat(padsi->pwfxDst)) {
 				lRes = ACMERR_NOTPOSSIBLE;
 				break;
 			}
 			if(padsi->fdwOpen & ACM_STREAMOPENF_QUERY) {
-				break;	// –â‚¢‡‚í‚¹‚Ì‚İ‚Ìê‡‚Í‚±‚±‚Ü‚Å‚ÅI—¹
+				break;	// å•ã„åˆã‚ã›ã®ã¿ã®å ´åˆã¯ã“ã“ã¾ã§ã§çµ‚äº†
 			}
-			// V‹KƒGƒ“ƒR[ƒhƒCƒ“ƒXƒ^ƒ“ƒXì¬
+			// æ–°è¦ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
 			COggVorbisEncode *p = new COggVorbisEncode(this);
 			if(!p) {
 				lRes = MMSYSERR_NOMEM;
@@ -945,7 +945,7 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 			}
 			lRes = p->Create(padsi->pwfxSrc,padsi->pwfxDst);
 			if(lRes==MMSYSERR_NOERROR) {
-				// ƒXƒgƒŠ[ƒ€ƒCƒ“ƒXƒ^ƒ“ƒXXV
+				// ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹æ›´æ–°
 				ASSERT(padsi->dwDriver==0);
 				padsi->dwDriver  = (DWORD)p;
 				padsi->fdwDriver = STREAMMODE_VORBIS_ENCODE;
@@ -958,7 +958,7 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 				  padsi->pwfxSrc->wFormatTag==WAVE_FORMAT_VORBIS1P||
 				  padsi->pwfxSrc->wFormatTag==WAVE_FORMAT_VORBIS2P||
 				  padsi->pwfxSrc->wFormatTag==WAVE_FORMAT_VORBIS3P) {
-			// OGG -> PCM •ÏŠ·(ƒfƒR[ƒh)‚Ìê‡
+			// OGG -> PCM å¤‰æ›(ãƒ‡ã‚³ãƒ¼ãƒ‰)ã®å ´åˆ
 			if(padsi->pwfxDst->wFormatTag!=WAVE_FORMAT_PCM) {
 				lRes = ACMERR_NOTPOSSIBLE;
 				break;
@@ -968,9 +968,9 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 				break;
 			}
 			if(padsi->fdwOpen & ACM_STREAMOPENF_QUERY) {
-				break;	// –â‚¢‡‚í‚¹‚Ì‚İ‚Ìê‡‚Í‚±‚±‚Ü‚Å‚ÅI—¹
+				break;	// å•ã„åˆã‚ã›ã®ã¿ã®å ´åˆã¯ã“ã“ã¾ã§ã§çµ‚äº†
 			}
-			// V‹KƒfƒR[ƒhƒCƒ“ƒXƒ^ƒ“ƒXì¬
+			// æ–°è¦ãƒ‡ã‚³ãƒ¼ãƒ‰ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
 			COggVorbisDecode *p = new COggVorbisDecode(this);
 			if(!p) {
 				lRes = MMSYSERR_NOMEM;
@@ -978,7 +978,7 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 			}
 			lRes = p->Create(padsi->pwfxSrc,padsi->pwfxDst);
 			if(lRes==MMSYSERR_NOERROR) {
-				// ƒXƒgƒŠ[ƒ€ƒCƒ“ƒXƒ^ƒ“ƒXXV
+				// ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹æ›´æ–°
 				ASSERT(padsi->dwDriver==0);
 				padsi->dwDriver  = (DWORD)p;
 				padsi->fdwDriver = STREAMMODE_VORBIS_DECODE;
@@ -986,7 +986,7 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 				delete p;
 			}
 		} else {
-			// –¢’è‹`‚Ì•ÏŠ·‚Ìê‡
+			// æœªå®šç¾©ã®å¤‰æ›ã®å ´åˆ
 			lRes = ACMERR_NOTPOSSIBLE;
 			break;
 		}
@@ -1027,7 +1027,7 @@ LRESULT CacmDriverOggVorbis::dmStreamSize(LPARAM lParam1, LPARAM lParam2)
 	DWORD cbSrcPerUnit = HMC::GetBytesPerSample(padsi->pwfxSrc);
 	DWORD fdwSize = padss->fdwSize & ACM_STREAMSIZEF_QUERYMASK;
 	do {
-		// ƒTƒ|[ƒg‚·‚éƒtƒH[ƒ}ƒbƒg‚Å‚ ‚é‚±‚Æ‚ğƒ`ƒFƒbƒN
+		// ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã§ã‚ã‚‹ã“ã¨ã‚’ãƒã‚§ãƒƒã‚¯
 		if(padsi->pwfxSrc->wFormatTag==WAVE_FORMAT_PCM) {
 			if(!(pcmIsValidFormat(padsi->pwfxSrc) && oggIsValidFormat(padsi->pwfxDst))) {
 				lRes = ACMERR_NOTPOSSIBLE;
@@ -1042,7 +1042,7 @@ LRESULT CacmDriverOggVorbis::dmStreamSize(LPARAM lParam1, LPARAM lParam2)
 			lRes = ACMERR_NOTPOSSIBLE;
 			break;
 		}
-		// ƒAƒ‰ƒCƒƒ“ƒg‚É–‚½‚È‚¢ê‡‚ÍƒGƒ‰[‚ğ•Ô‚·(ğŒ‚ª<=‚Å‚ ‚é‚±‚Æ‚É’ˆÓ)
+		// ã‚¢ãƒ©ã‚¤ãƒ¡ãƒ³ãƒˆã«æº€ãŸãªã„å ´åˆã¯ã‚¨ãƒ©ãƒ¼ã‚’è¿”ã™(æ¡ä»¶ãŒ<=ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„)
 		if(fdwSize==ACM_STREAMSIZEF_SOURCE) {
 			if(padss->cbSrcLength<=cbSrcPerUnit) {
 				lRes = ACMERR_NOTPOSSIBLE;
@@ -1057,10 +1057,10 @@ LRESULT CacmDriverOggVorbis::dmStreamSize(LPARAM lParam1, LPARAM lParam2)
 			lRes = ACMERR_NOTPOSSIBLE;
 			break;
 		}
-		// SOURCE/DESTINATIN‚Ìê‡‚Å‚»‚ê‚¼‚êZo
+		// SOURCE/DESTINATINã®å ´åˆã§ãã‚Œãã‚Œç®—å‡º
 		if(fdwSize==ACM_STREAMSIZEF_SOURCE) {
 			DWORD cbDstLength = (DWORD)((ULONGLONG)padss->cbSrcLength * cbDstPerSec / cbSrcPerSec);
-			cbDstLength = cbDstLength * 2;	// ƒŒ[ƒg•Ï“®‚É‘Î‰‚·‚é‚½‚ß‚É”ä‚ğ’²®
+			cbDstLength = cbDstLength * 2;	// ãƒ¬ãƒ¼ãƒˆå¤‰å‹•ã«å¯¾å¿œã™ã‚‹ãŸã‚ã«æ¯”ã‚’èª¿æ•´
 			if(cbDstLength<cbDstPerUnit) {
 				lRes = ACMERR_NOTPOSSIBLE;
 				break;
@@ -1068,7 +1068,7 @@ LRESULT CacmDriverOggVorbis::dmStreamSize(LPARAM lParam1, LPARAM lParam2)
 			padss->cbDstLength = ALIGN(cbDstLength,cbDstPerUnit);
 		} else if(fdwSize==ACM_STREAMSIZEF_DESTINATION) {
 			DWORD cbSrcLength = (DWORD)((ULONGLONG)padss->cbDstLength * cbSrcPerSec / cbDstPerSec);
-			cbSrcLength = cbSrcLength / 2;	// ƒŒ[ƒg•Ï“®‚É‘Î‰‚·‚é‚½‚ß‚É”ä‚ğ’²®
+			cbSrcLength = cbSrcLength / 2;	// ãƒ¬ãƒ¼ãƒˆå¤‰å‹•ã«å¯¾å¿œã™ã‚‹ãŸã‚ã«æ¯”ã‚’èª¿æ•´
 			if(cbSrcLength<cbSrcPerUnit) {
 				lRes = ACMERR_NOTPOSSIBLE;
 				break;
@@ -1084,7 +1084,7 @@ LRESULT CacmDriverOggVorbis::dmStreamConvert(LPARAM lParam1, LPARAM lParam2)
 	LPACMDRVSTREAMINSTANCE padsi = (LPACMDRVSTREAMINSTANCE)lParam1;
 	LPACMDRVSTREAMHEADER padsh = (LPACMDRVSTREAMHEADER)lParam2;
 	LRESULT lRes = MMSYSERR_NOERROR;
-	// Ogg Vorbis ƒGƒ“ƒR[ƒh•”
+	// Ogg Vorbis ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰éƒ¨
 	if(padsi->fdwDriver==STREAMMODE_VORBIS_ENCODE) {
 		COggVorbisEncode *p = (COggVorbisEncode *)padsi->dwDriver;
 		ASSERT(p);
@@ -1095,7 +1095,7 @@ LRESULT CacmDriverOggVorbis::dmStreamConvert(LPARAM lParam1, LPARAM lParam2)
 			delete p;
 		}
 	}
-	// Ogg Vorbis ƒfƒR[ƒh•”
+	// Ogg Vorbis ãƒ‡ã‚³ãƒ¼ãƒ‰éƒ¨
 	else if(padsi->fdwDriver==STREAMMODE_VORBIS_DECODE) {
 		COggVorbisDecode *p = (COggVorbisDecode *)padsi->dwDriver;
 		ASSERT(p);

@@ -625,7 +625,7 @@ private:
 /*****************************************************************
 	固定サイズ文字列型クラス
 *****************************************************************/
-template <size_t array_len> class TString : public TStringBase<TString,TCHAR,array_len,false,NULL>
+template <size_t array_len> class TString : public TStringBase<TString<array_len>,TCHAR,array_len,false,NULL>
 {
 public:
 	DECLARE_SYNONYM(TYPE,TYPE);
@@ -657,7 +657,7 @@ public:
 	bool operator> (tchar_t *p) const { return compare(p)>0; }
 	TYPE operator+ (tchar_t *p) const { TYPE t=*((LPTYPE)this); t.concat(p); return t; }
 };
-template <size_t array_len> class TStringA : public TStringBase<TStringA,char,array_len,false,NULL>
+template <size_t array_len> class TStringA : public TStringBase<TStringA<array_len>,char,array_len,false,NULL>
 {
 public:
 	DECLARE_SYNONYM(TStringA,TYPE);
@@ -689,7 +689,7 @@ public:
 	bool operator> (tchar_t *p) const { return compare(p)>0; }
 	TYPE operator+ (tchar_t *p) const { TYPE t=*((LPTYPE)this); t.concat(p); return t; }
 };
-template <size_t array_len> class TStringW : public TStringBase<TStringW,wchar_t,array_len,false,NULL>
+template <size_t array_len> class TStringW : public TStringBase<TStringW<array_len>,wchar_t,array_len,false,NULL>
 {
 public:
 	DECLARE_SYNONYM(TStringW,TYPE);

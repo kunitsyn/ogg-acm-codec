@@ -10,6 +10,11 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vorbisexe.vcxproj">
+      <Project>{5f5eded5-88d0-4a2c-9dbd-b81f8ab13a3e}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C79E2DD9-1D84-48B8-B2C8-4F9CD559C5A9}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
@@ -54,12 +59,6 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ProjectReference Include="vorbisexe.vcxproj">
-      <Project>{5f5eded5-88d0-4a2c-9dbd-b81f8ab13a3e}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

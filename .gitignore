@@ -1,1 +1,15 @@
 src/vorbisacm/.vs/
+*.opendb
+*.VC.db
+*.vcxproj.user
+src/hmc/Debug/
+src/hmc/Release/
+src/libogg/Debug/
+src/libogg/Release/
+src/libvorbis/Debug/
+src/libvorbis/Release/
+src/vorbisacm/Debug/
+src/vorbisacm/Debug_exe/
+src/vorbisacm/Release/
+src/vorbisacm/Release_exe/
+src/vorbisacm/vorbis.exe

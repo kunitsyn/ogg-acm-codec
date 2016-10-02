@@ -1,4 +1,4 @@
-dump.inl: codec.cpp codec.h encode.cpp
+dump.inl: vorbis.exe
 	.\vorbis.exe > dump.inl
 
 clean:
